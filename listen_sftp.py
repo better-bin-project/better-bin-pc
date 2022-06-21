@@ -1,7 +1,6 @@
 import os
 import argparse
-from ml import call_TF
-from time import sleep
+from ml import recognize
 from datetime import datetime
 
 parser = argparse.ArgumentParser()
@@ -19,6 +18,11 @@ img_dict = {
     'packet': 'paper',
     'menu': 'paper',
     'medicine_chest': 'paper',
+    'handkerchief': 'paper',
+    'hard_disk': 'paper',
+    'wool': 'paper',
+    'conch': 'paper',
+
     'plastic_bag': 'plastic',
     'shower_cap': 'plastic',
     'mosquito_net': 'plastic',
@@ -31,7 +35,15 @@ img_dict = {
     'shower_curtain': 'plastic',
     'cocktail_shaker': 'plastic',
     'water_bottle': 'plastic',
-    'water_jug': 'plastic'
+    'water_jug': 'plastic',
+    'combination_lock': 'plastic',
+    'safe': 'plastic',
+    'binder': 'plastic',
+    'window_screen': 'plastic',
+    'great_white_shark': 'plastic',
+    'wine_bottle': 'plastic',
+    'bubble': 'plastic',
+    'washer': 'plastic'
 }
 
 while True:
@@ -40,7 +52,7 @@ while True:
             os.remove('cmpl_ml')
         while not os.path.exists('cmpl_upload'):
             pass
-        res, prob = call_TF(args['model'], 'img.jpg')
+        res, prob = recognize(args['model'], 'img.jpg')
         print(res, prob)
         solution = 'residual'
         if res in img_dict:

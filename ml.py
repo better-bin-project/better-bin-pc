@@ -7,7 +7,7 @@ models_dict = {
     'mobilenet': tf.keras.applications.mobilenet_v2.MobileNetV2(weights='imagenet'),
 }
 
-def call_TF(modelname, imgpath):
+def recognize(modelname, imgpath):
     image = tf.keras.preprocessing.image.load_img(imgpath, 
         target_size=(224, 224))
     image = np.expand_dims(image, axis=0)
