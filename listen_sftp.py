@@ -22,6 +22,10 @@ img_dict = {
     'hard_disk': 'paper',
     'wool': 'paper',
     'conch': 'paper',
+    'diaper': 'paper',
+    'mixing_bowl': 'paper',
+    'cup': 'paper',
+    'coffee_mug': 'paper',
 
     'plastic_bag': 'plastic',
     'shower_cap': 'plastic',
